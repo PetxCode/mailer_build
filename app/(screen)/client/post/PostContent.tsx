@@ -31,13 +31,6 @@ const PostContent = () => {
     });
   }, []);
 
-  console.log(
-    "reading: ",
-    readData?.map((el: any) => {
-      return el.read?.some((el: any) => el === userID);
-    })
-  );
-
   return (
     <div className="w-full h-full  overflow-x-auto">
       <div className="w-[100%] h-[150vh] ">
@@ -81,7 +74,7 @@ const PostContent = () => {
                   <div className="mb-1 flex items-center justify-between">
                     <div className="flex items-center gap-5 ">
                       <p className="">
-                        <Profile />
+                        <Profile userID={el} />
                       </p>
                       {el?.read?.some(
                         (props: any) =>
@@ -100,7 +93,7 @@ const PostContent = () => {
                       {moment(el?.createdAt).format("lll")}
                     </p>
                   </div>
-                  <p className="text-[14px] my-2 text-[gray]">Title</p>
+                  <p className="text-[14px] my-2 text-[gray]">{el.title}</p>
                   <div className="flex-1 text-[12px] text-gray-500">
                     <div dangerouslySetInnerHTML={{ __html: el?.message }} />
                   </div>

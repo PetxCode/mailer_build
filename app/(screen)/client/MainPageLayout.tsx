@@ -7,7 +7,7 @@ interface iProps {
 }
 
 const MainPageLayout: FC<iProps> = ({ children }) => {
-  return <div></div>;
+  return <div>{children}</div>;
 };
 
 export default MainPageLayout;

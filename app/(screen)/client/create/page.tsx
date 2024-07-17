@@ -23,9 +23,9 @@ const page = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ title, tag, message: value }),
+      body: JSON.stringify({ userID: ID, title, tag, message: value }),
     }).then(() => {
-      return redirect("/client/inbox");
+      return redirect("/client");
     });
 
     revalidateTag("mail");

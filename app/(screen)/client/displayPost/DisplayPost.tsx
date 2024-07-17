@@ -9,6 +9,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { FcDeleteDatabase } from "react-icons/fc";
 import { MdDelete, MdDeleteForever } from "react-icons/md";
 import MainProfile from "../post/MailProfile";
+import Profile from "../post/Profile";
 
 const DisplayPost = () => {
   const user = useUser();
@@ -74,7 +75,6 @@ const DisplayPost = () => {
 
   return (
     <div className="h-full">
-      id: {id}
       <div className="flex mx-1 w-[98%] items-center  border-b pb-2 mb-2 h-[45px] text-[25px] gap-5">
         <MdDeleteForever className="cursor-pointer" />
         <FcDeleteDatabase className="cursor-pointer" />
@@ -87,7 +87,7 @@ const DisplayPost = () => {
           </div>
           <div className="text-[12px]">
             <p className="text-[15px] font-semibold">
-              <MainProfile userID={data?.userID} />
+              <Profile userID={data} />
             </p>
             <div className="text-gray-300">
               <p>Re: Peter</p>
