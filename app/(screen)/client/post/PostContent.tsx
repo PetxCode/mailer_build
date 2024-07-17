@@ -76,18 +76,12 @@ const PostContent = () => {
                       <p className="">
                         <Profile userID={el} />
                       </p>
-                      {el?.read?.some(
-                        (props: any) =>
-                          props !== userID && (
-                            <div>
-                              <div className="w-2 h-2 rounded-full bg-red-500" />
-                            </div>
-                          )
-                      )}
 
-                      <div>
+                      {el?.read?.some((el: any) => el === userID) ? (
+                        <div className="w-2 h-2 rounded-full bg-green-500" />
+                      ) : (
                         <div className="w-2 h-2 rounded-full bg-red-500" />
-                      </div>
+                      )}
                     </div>
                     <p className="text-[12px] text-gray-500 font-semibold">
                       {moment(el?.createdAt).format("lll")}

@@ -55,15 +55,16 @@ const DisplayPost = () => {
   const makeAsSeen = async () => {
     const url = `http://localhost:3000/api/${userID}/${id}`;
 
-    return await fetch(url, {
+    await fetch(url, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
-      //   body: JSON.stringify({}),
     }).then((res) => {
       return res.json();
     });
+
+    revalidateTag("mail");
   };
 
   useEffect(() => {
